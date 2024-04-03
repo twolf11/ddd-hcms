@@ -6,8 +6,6 @@
 
 作者将多年领域驱动设计的经验，撰写成《悟道DDD（Thinking in DDD）》这一电子书，力求用最平实、最通俗、最容易理解的方式将DDD分享给各位朋友。
 
-本电子书永久免费阅读，欢迎沟通交流。
-
 项目地址：https://github.com/feiniaojin/Thinking-in-DDD 
 
 在线阅读：https://ddd.feiniaojin.com/
