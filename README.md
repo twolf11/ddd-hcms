@@ -9,3 +9,13 @@
 项目地址：https://github.com/feiniaojin/Thinking-in-DDD 
 
 在线阅读：https://ddd.feiniaojin.com/
+
+# 快速开始
+
+ddd类库
+
+```text
+https://github.com/feiniaojin/ddd
+```
+
+
