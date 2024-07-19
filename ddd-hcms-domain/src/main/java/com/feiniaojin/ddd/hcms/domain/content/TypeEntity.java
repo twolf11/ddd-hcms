@@ -16,4 +16,8 @@ public class TypeEntity extends AbstractDomainMask {
     private String displayName;
 
     private Integer status;
+
+    public void createDraft() {
+        this.status = TypeStatus.DRAFT.getCode();
+    }
 }

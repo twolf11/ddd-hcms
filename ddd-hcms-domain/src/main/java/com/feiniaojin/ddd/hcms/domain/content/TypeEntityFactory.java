@@ -5,5 +5,5 @@ package com.feiniaojin.ddd.hcms.domain.content;
  */
 public interface TypeEntityFactory {
 
-    public TypeEntity newInstance();
+    public TypeEntity newInstance(String displayName);
 }
