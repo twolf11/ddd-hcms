@@ -1,6 +1,6 @@
-package com.feiniaojin.application.service.content;
+package com.feiniaojin.application.service.content.type;
 
-import com.feiniaojin.application.service.content.dto.TypeView;
+import com.feiniaojin.application.service.content.type.dto.TypeView;
 import com.feiniaojin.ddd.hcms.domain.content.TypeEntity;
 import com.feiniaojin.ddd.hcms.domain.content.TypeEntityId;
 import com.feiniaojin.ddd.hcms.domain.content.TypeEntityRepository;

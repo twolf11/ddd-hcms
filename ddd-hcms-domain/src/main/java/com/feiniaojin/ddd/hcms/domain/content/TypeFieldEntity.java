@@ -9,9 +9,9 @@ import lombok.Data;
  * @author qinyujie
  */
 @Data
-public class FieldEntity extends AbstractDomainMask {
+public class TypeFieldEntity extends AbstractDomainMask {
 
-    private FieldEntityId fieldEntityId;
+    private TypeFieldEntityId typeFieldEntityId;
 
     private String fieldName;
 

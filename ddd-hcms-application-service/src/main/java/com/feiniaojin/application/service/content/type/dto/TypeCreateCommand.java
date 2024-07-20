@@ -1,4 +1,4 @@
-package com.feiniaojin.application.service.content.dto;
+package com.feiniaojin.application.service.content.type.dto;
 
 import lombok.Data;
 

@@ -1,15 +1,15 @@
 package com.feiniaojin.ui.web.controller;
 
-import com.feiniaojin.application.service.content.TypeCommandService;
-import com.feiniaojin.application.service.content.TypeQueryService;
-import com.feiniaojin.application.service.content.dto.TypeCreateCommand;
-import com.feiniaojin.application.service.content.dto.TypeView;
+import com.feiniaojin.application.service.content.type.TypeCommandService;
+import com.feiniaojin.application.service.content.type.TypeQueryService;
+import com.feiniaojin.application.service.content.type.dto.TypeCreateCommand;
+import com.feiniaojin.application.service.content.type.dto.TypeView;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("/type")
+@RequestMapping("/ContentTypes")
 public class TypeController {
 
     @Resource
@@ -22,6 +22,12 @@ public class TypeController {
     @PutMapping
     public void create(@RequestBody TypeCreateCommand createCommand) {
         commandService.createTypeDraft(createCommand);
+    }
+
+    @GetMapping
+    @ResponseBody
+    public TypeView pageList(@PathVariable String id) {
+        return queryService.findOne(id);
     }
 
     @GetMapping("/{id}")

@@ -1,4 +1,4 @@
-package com.feiniaojin.application.service.content;
+package com.feiniaojin.application.service.content.type;
 
 import com.feiniaojin.ddd.hcms.domain.content.TypeEntity;
 import com.feiniaojin.ddd.hcms.domain.content.TypeEntityFactory;

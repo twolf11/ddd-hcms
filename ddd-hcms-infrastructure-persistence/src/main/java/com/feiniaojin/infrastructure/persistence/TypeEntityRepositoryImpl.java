@@ -37,20 +37,20 @@ public class TypeEntityRepositoryImpl implements TypeEntityRepository {
 
     @Override
     @Transactional
-    public void save(TypeEntity typeEntity) {
+    public void save(TypeEntity entity) {
         HcmsContentType data = new HcmsContentType();
 
-        data.setId(typeEntity.getId());
-        data.setVersion(typeEntity.getVersion());
-        data.setCreatedBy(typeEntity.getCreatedBy());
-        data.setCreatedTime(typeEntity.getCreatedTime());
-        data.setModifiedBy(typeEntity.getModifiedBy());
-        data.setModifiedTime(typeEntity.getModifiedTime());
-        data.setDeleted(typeEntity.getDeleted());
+        data.setId(entity.getId());
+        data.setVersion(entity.getVersion());
+        data.setCreatedBy(entity.getCreatedBy());
+        data.setCreatedTime(entity.getCreatedTime());
+        data.setModifiedBy(entity.getModifiedBy());
+        data.setModifiedTime(entity.getModifiedTime());
+        data.setDeleted(entity.getDeleted());
 
-        data.setStatus(typeEntity.getStatus());
-        data.setDisplayName(typeEntity.getDisplayName());
-        data.setContentTypeId(typeEntity.getTypeEntityId().getValue());
+        data.setStatus(entity.getStatus());
+        data.setDisplayName(entity.getDisplayName());
+        data.setContentTypeId(entity.getTypeEntityId().getValue());
 
         jdbcRepository.save(data);
     }

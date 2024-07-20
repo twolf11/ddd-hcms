@@ -1,6 +1,6 @@
-package com.feiniaojin.application.service.content;
+package com.feiniaojin.application.service.content.type;
 
-import com.feiniaojin.application.service.content.dto.TypeCreateCommand;
+import com.feiniaojin.application.service.content.type.dto.TypeCreateCommand;
 import com.feiniaojin.ddd.hcms.domain.content.TypeEntity;
 import com.feiniaojin.ddd.hcms.domain.content.TypeEntityFactory;
 import com.feiniaojin.ddd.hcms.domain.content.TypeEntityRepository;

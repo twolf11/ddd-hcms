@@ -1,6 +1,7 @@
 package com.feiniaojin.infrastructure.persistence.jdbc;
 
 import com.feiniaojin.infrastructure.persistence.data.HcmsContentTypeField;
+import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.data.repository.CrudRepository;
 
 /**
@@ -10,4 +11,7 @@ import org.springframework.data.repository.CrudRepository;
  * github：https://github.com/feiniaojin/code-generator
  */
 public interface HcmsContentTypeFieldRepository extends CrudRepository<HcmsContentTypeField, Long> {
+
+    @Query("select * from hcms_content_type_field where field_id=:fieldId limit 1")
+    HcmsContentTypeField findOneByBizId(String fieldId);
 }

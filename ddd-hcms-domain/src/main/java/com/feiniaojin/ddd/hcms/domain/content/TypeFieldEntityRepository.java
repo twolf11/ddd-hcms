@@ -7,6 +7,6 @@ import com.feiniaojin.ddd.DomainRepository;
  *
  * @author qinyujie
  */
-public interface FieldEntityRepository extends DomainRepository<FieldEntity, FieldEntityId> {
+public interface TypeFieldEntityRepository extends DomainRepository<TypeFieldEntity, TypeFieldEntityId> {
 
 }

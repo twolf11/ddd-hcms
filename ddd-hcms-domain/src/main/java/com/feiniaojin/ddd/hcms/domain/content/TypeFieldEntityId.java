@@ -6,11 +6,11 @@ import org.apache.commons.lang3.StringUtils;
 /**
  * @author qinyujie
  */
-public class FieldEntityId implements EntityId<String> {
+public class TypeFieldEntityId implements EntityId<String> {
 
     private String value;
 
-    public FieldEntityId(String value) {
+    public TypeFieldEntityId(String value) {
         if (StringUtils.isBlank(value)) {
             throw new IllegalArgumentException("ContentFieldId入参不能为空");
         }
