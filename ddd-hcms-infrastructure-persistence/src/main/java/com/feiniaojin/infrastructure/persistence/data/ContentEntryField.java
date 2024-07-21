@@ -13,14 +13,14 @@ import java.util.Date;
 
 /**
  * 表名称：hcms_content_entry_field
- * 表注释：内容实例表
+ * 表注释：内容实例字段表
  * NOTICE:本文件由代码生成器code-generator生成，不要在本文件手工追加任何内容，因为随时可能重新生成替换
  * github：https://github.com/feiniaojin/code-generator
  */
 @Data
 @Table("hcms_content_entry_field")
 @Generated("generator")
-public class HcmsContentEntryField implements Serializable {
+public class ContentEntryField implements Serializable {
     /**
      * 自增主键
      */
@@ -33,15 +33,23 @@ public class HcmsContentEntryField implements Serializable {
     /**
      * entry的唯一标识
      */
-    private String contentEntryId;
+    private String entryId;
     /**
      * 属性定义的唯一标识
      */
-    private String fieldId;
+    private String typeFieldId;
     /**
-     * 属性定义值
+     * 属性定义的字段名称
      */
-    private String entryFieldValue;
+    private String fieldName;
+    /**
+     * 字段数据类型
+     */
+    private Integer fieldDataType;
+    /**
+     * 属性定义的字段值
+     */
+    private String fieldValue;
     /**
      * 状态：0草稿，1已发布，2撤回
      */

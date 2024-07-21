@@ -23,6 +23,5 @@ spring:
       static-locations: classpath:/static/,classpath:/views/
 graceful-response:
   print-exception-in-global-advice: true
-  default-success-code: 20000
   response-style: 1
 

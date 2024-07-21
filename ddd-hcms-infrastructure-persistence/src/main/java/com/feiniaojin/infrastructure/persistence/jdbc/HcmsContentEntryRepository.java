@@ -1,6 +1,7 @@
 package com.feiniaojin.infrastructure.persistence.jdbc;
 
 import com.feiniaojin.infrastructure.persistence.data.HcmsContentEntry;
+import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.data.repository.CrudRepository;
 
 /**
@@ -10,4 +11,7 @@ import org.springframework.data.repository.CrudRepository;
  * github：https://github.com/feiniaojin/code-generator
  */
 public interface HcmsContentEntryRepository extends CrudRepository<HcmsContentEntry, Long> {
+
+    @Query("select * from hcms_content_entry where content_entry_id=:contentEntryId limit 1")
+    HcmsContentEntry findOneByBizId(String contentEntryId);
 }

@@ -30,6 +30,11 @@ public class HcmsContentTypeField implements Serializable {
      * 业务唯一标识
      */
     private String fieldId;
+
+    /**
+     * 内容类型的唯一标识
+     */
+    private String contentTypeId;
     /**
      * 属性名称
      */
@@ -53,7 +58,7 @@ public class HcmsContentTypeField implements Serializable {
     /**
      * 创建时间
      */
-     @CreatedDate
+    @CreatedDate
     private Date createdTime;
     /**
      * 更新人

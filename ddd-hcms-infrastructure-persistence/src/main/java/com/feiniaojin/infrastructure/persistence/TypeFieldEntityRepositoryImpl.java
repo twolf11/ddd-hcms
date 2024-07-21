@@ -1,5 +1,6 @@
 package com.feiniaojin.infrastructure.persistence;
 
+import com.feiniaojin.ddd.hcms.domain.content.TypeEntityId;
 import com.feiniaojin.ddd.hcms.domain.content.TypeFieldEntity;
 import com.feiniaojin.ddd.hcms.domain.content.TypeFieldEntityId;
 import com.feiniaojin.ddd.hcms.domain.content.TypeFieldEntityRepository;
@@ -25,6 +26,7 @@ public class TypeFieldEntityRepositoryImpl implements TypeFieldEntityRepository 
         entity.setFieldName(data.getFieldName());
         entity.setTypeFieldEntityId(entityId);
         entity.setFieldDataType(data.getFieldDataType());
+        entity.setTypeEntityId(new TypeEntityId(data.getContentTypeId()));
 
         //version id
         entity.setId(data.getId());
@@ -50,6 +52,8 @@ public class TypeFieldEntityRepositoryImpl implements TypeFieldEntityRepository 
         data.setFieldDataType(entity.getFieldDataType());
         data.setStatus(entity.getStatus());
         data.setFieldId(entity.getTypeFieldEntityId().getValue());
+        data.setContentTypeId(entity.getTypeEntityId().getValue());
+
         hcmsContentTypeFieldRepository.save(data);
     }
 }
