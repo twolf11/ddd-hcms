@@ -1,7 +1,10 @@
 package com.feiniaojin.infrastructure.persistence.jdbc;
 
 import com.feiniaojin.infrastructure.persistence.data.HcmsContentEntryField;
+import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.data.repository.CrudRepository;
+
+import java.util.List;
 
 /**
  * 表名称：hcms_content_entry_field自动生成的Repository
@@ -10,4 +13,10 @@ import org.springframework.data.repository.CrudRepository;
  * github：https://github.com/feiniaojin/code-generator
  */
 public interface HcmsContentEntryFieldRepository extends CrudRepository<HcmsContentEntryField, Long> {
+
+    @Query("select * from hcms_content_entry_field where entry_field_id=:idValue")
+    HcmsContentEntryField findOneByBizId(String idValue);
+
+    @Query("select * from hcms_content_entry_field where content_entry_id=:idValue")
+    List<HcmsContentEntryField> listByEntryId(String entryId);
 }

@@ -11,4 +11,10 @@ public class EntryFieldEntity extends AbstractDomainMask {
 
     private EntryFieldEntityId entryFieldEntityId;
 
+    private TypeEntityId typeEntityId;
+
+    private EntryEntityId entryEntityId;
+
+    private String entryFieldValue;
+
 }

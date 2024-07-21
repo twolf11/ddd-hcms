@@ -5,5 +5,5 @@ package com.feiniaojin.ddd.hcms.domain.content;
  */
 public interface EntryEntityFactory {
 
-    EntryEntity newInstance();
+    EntryEntity newInstance(TypeEntityId typeEntityId);
 }
