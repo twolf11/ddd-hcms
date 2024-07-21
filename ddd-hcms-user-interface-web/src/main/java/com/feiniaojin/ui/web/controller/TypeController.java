@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("/ContentTypes")
+@RequestMapping("/content-types")
 public class TypeController {
 
     @Resource
@@ -19,7 +19,7 @@ public class TypeController {
     private TypeQueryService queryService;
 
     @ResponseBody
-    @PutMapping
+    @PostMapping
     public void create(@RequestBody TypeCreateCommand createCommand) {
         commandService.createTypeDraft(createCommand);
     }

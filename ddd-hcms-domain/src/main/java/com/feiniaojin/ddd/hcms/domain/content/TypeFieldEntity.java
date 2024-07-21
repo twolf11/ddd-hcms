@@ -13,6 +13,11 @@ public class TypeFieldEntity extends AbstractDomainMask {
 
     private TypeFieldEntityId typeFieldEntityId;
 
+    /**
+     * 对于内容类型的ID
+     */
+    private TypeEntityId typeEntityId;
+
     private String fieldName;
 
     private Integer fieldDataType;

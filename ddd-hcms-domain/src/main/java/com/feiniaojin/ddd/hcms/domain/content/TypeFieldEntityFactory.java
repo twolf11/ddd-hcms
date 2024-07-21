@@ -5,5 +5,5 @@ package com.feiniaojin.ddd.hcms.domain.content;
  */
 public interface TypeFieldEntityFactory {
 
-    TypeFieldEntity newInstance();
+    TypeFieldEntity newInstance(TypeEntityId typeEntityId, String fieldName, Integer fieldDataType);
 }
