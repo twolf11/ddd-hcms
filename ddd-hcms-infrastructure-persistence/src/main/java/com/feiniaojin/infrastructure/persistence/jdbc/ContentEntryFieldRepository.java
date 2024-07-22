@@ -4,6 +4,8 @@ import com.feiniaojin.infrastructure.persistence.data.ContentEntryField;
 import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.data.repository.CrudRepository;
 
+import java.util.List;
+
 /**
  * 表名称：hcms_content_entry_field自动生成的Repository
  * 表注释：内容实例表
@@ -12,6 +14,9 @@ import org.springframework.data.repository.CrudRepository;
  */
 public interface ContentEntryFieldRepository extends CrudRepository<ContentEntryField, Long> {
 
-    @Query("select * from hcms_content_entry_field where entry_field_id=:entryFieldId limit 1")
-    ContentEntryField findOneByBizId(String entryFieldId);
+    @Query("select * from hcms_content_entry_field where entry_field_id=:idValue")
+    ContentEntryField findOneByBizId(String idValue);
+
+    @Query("select * from hcms_content_entry_field where entry_id=:entryId")
+    List<ContentEntryField> listByEntryId(String entryId);
 }
