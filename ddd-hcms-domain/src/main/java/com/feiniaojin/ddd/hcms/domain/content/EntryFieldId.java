@@ -8,12 +8,12 @@ import org.apache.commons.lang3.StringUtils;
  * @author qinyujie
  */
 @Data
-public class EntryFieldEntityId implements EntityId<String> {
+public class EntryFieldId implements EntityId<String> {
 
 
     private String value;
 
-    public EntryFieldEntityId(String value) {
+    public EntryFieldId(String value) {
         if (StringUtils.isBlank(value)) {
             throw new IllegalArgumentException("EntryFieldEntityId入参不能为空");
         }

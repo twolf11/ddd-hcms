@@ -2,8 +2,8 @@ package com.feiniaojin.ddd.hcms.domain.content;
 
 public interface EntryFieldEntityFactory {
 
-    EntryFieldEntity newInstance(EntryEntityId entryEntityId,
-                                 TypeFieldEntityId typeFieldEntityId,
+    EntryFieldEntity newInstance(EntryId entryId,
+                                 TypeFieldId typeFieldId,
                                  String fieldName,
                                  Integer fieldDataType,
                                  String fieldValue);

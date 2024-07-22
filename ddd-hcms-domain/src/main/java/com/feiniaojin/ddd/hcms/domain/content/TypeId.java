@@ -8,11 +8,11 @@ import org.apache.commons.lang3.StringUtils;
  *
  * @author qinyujie
  */
-public class TypeEntityId implements EntityId<String> {
+public class TypeId implements EntityId<String> {
 
     private String value;
 
-    public TypeEntityId(String value) {
+    public TypeId(String value) {
         if (StringUtils.isBlank(value)) {
             throw new IllegalArgumentException("ContentTypeId入参不能为空");
         }

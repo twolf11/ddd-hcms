@@ -12,12 +12,12 @@ public class EntryEntity extends AbstractDomainMask {
     /**
      * 内容实例的唯一标识
      */
-    private EntryEntityId entryEntityId;
+    private EntryId entryId;
 
     /**
      * 内容类型id
      */
-    private TypeEntityId typeEntityId;
+    private TypeId typeId;
 
     /**
      * 状态

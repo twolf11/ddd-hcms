@@ -16,8 +16,8 @@ public class EntryFieldCommandService {
 
     public void createEntryField(EntryFieldCreateCommand command) {
 
-        EntryEntityId entryEntityId = new EntryEntityId(command.getEntryEntityId());
-        TypeFieldEntityId typeFieldEntityId = new TypeFieldEntityId(command.getFieldEntityId());
+        EntryId entryEntityId = new EntryId(command.getEntryEntityId());
+        TypeFieldId typeFieldEntityId = new TypeFieldId(command.getFieldEntityId());
 
         EntryFieldEntity entryFieldEntity = factory.newInstance(entryEntityId,
                 typeFieldEntityId, command.getFieldName(), command.getFieldDataType(), command.getFieldValue());

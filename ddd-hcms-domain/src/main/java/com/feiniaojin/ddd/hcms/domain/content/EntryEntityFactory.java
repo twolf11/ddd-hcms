@@ -4,6 +4,5 @@ package com.feiniaojin.ddd.hcms.domain.content;
  * @author qinyujie
  */
 public interface EntryEntityFactory {
-
-    EntryEntity newInstance(TypeEntityId typeEntityId);
+    EntryEntity newInstance(TypeId typeId);
 }

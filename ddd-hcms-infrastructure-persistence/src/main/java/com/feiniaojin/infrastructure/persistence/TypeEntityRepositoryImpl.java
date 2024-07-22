@@ -1,7 +1,7 @@
 package com.feiniaojin.infrastructure.persistence;
 
 import com.feiniaojin.ddd.hcms.domain.content.TypeEntity;
-import com.feiniaojin.ddd.hcms.domain.content.TypeEntityId;
+import com.feiniaojin.ddd.hcms.domain.content.TypeId;
 import com.feiniaojin.ddd.hcms.domain.content.TypeEntityRepository;
 import com.feiniaojin.infrastructure.persistence.data.HcmsContentType;
 import com.feiniaojin.infrastructure.persistence.jdbc.HcmsContentTypeRepository;
@@ -16,14 +16,14 @@ public class TypeEntityRepositoryImpl implements TypeEntityRepository {
     private HcmsContentTypeRepository jdbcRepository;
 
     @Override
-    public TypeEntity load(TypeEntityId entityId) {
+    public TypeEntity load(TypeId entityId) {
 
         String idValue = entityId.getValue();
 
         HcmsContentType hcmsContentType = jdbcRepository.findOne(idValue);
 
         TypeEntity typeEntity = new TypeEntity();
-        typeEntity.setTypeEntityId(entityId);
+        typeEntity.setTypeId(entityId);
         typeEntity.setDisplayName(hcmsContentType.getDisplayName());
         typeEntity.setStatus(hcmsContentType.getStatus());
 
@@ -50,7 +50,7 @@ public class TypeEntityRepositoryImpl implements TypeEntityRepository {
 
         data.setStatus(entity.getStatus());
         data.setDisplayName(entity.getDisplayName());
-        data.setContentTypeId(entity.getTypeEntityId().getValue());
+        data.setContentTypeId(entity.getTypeId().getValue());
 
         jdbcRepository.save(data);
     }

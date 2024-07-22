@@ -1,7 +1,7 @@
 package com.feiniaojin.application.service.content.typefield;
 
 import com.feiniaojin.application.service.content.typefield.dto.TypeFieldCreateCommand;
-import com.feiniaojin.ddd.hcms.domain.content.TypeEntityId;
+import com.feiniaojin.ddd.hcms.domain.content.TypeId;
 import com.feiniaojin.ddd.hcms.domain.content.TypeFieldEntity;
 import com.feiniaojin.ddd.hcms.domain.content.TypeFieldEntityFactory;
 import com.feiniaojin.ddd.hcms.domain.content.TypeFieldEntityRepository;
@@ -19,7 +19,7 @@ public class TypeFieldCommandService {
 
     public void createTypeField(TypeFieldCreateCommand createCommand) {
 
-        TypeEntityId typeEntityId = new TypeEntityId(createCommand.getTypeId());
+        TypeId typeEntityId = new TypeId(createCommand.getTypeId());
 
         TypeFieldEntity typeField = factory.newInstance(typeEntityId,
                 createCommand.getFieldName(),

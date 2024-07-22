@@ -1,9 +1,9 @@
 package com.feiniaojin.infrastructure.persistence;
 
 import com.feiniaojin.ddd.hcms.domain.content.EntryEntity;
-import com.feiniaojin.ddd.hcms.domain.content.EntryEntityId;
+import com.feiniaojin.ddd.hcms.domain.content.EntryId;
 import com.feiniaojin.ddd.hcms.domain.content.EntryEntityRepository;
-import com.feiniaojin.ddd.hcms.domain.content.TypeEntityId;
+import com.feiniaojin.ddd.hcms.domain.content.TypeId;
 import com.feiniaojin.infrastructure.persistence.data.HcmsContentEntry;
 import com.feiniaojin.infrastructure.persistence.jdbc.HcmsContentEntryRepository;
 import jakarta.annotation.Resource;
@@ -16,13 +16,13 @@ public class EntryEntityRepositoryImpl implements EntryEntityRepository {
     private HcmsContentEntryRepository hcmsContentEntryRepository;
 
     @Override
-    public EntryEntity load(EntryEntityId entryEntityId) {
+    public EntryEntity load(EntryId entryEntityId) {
 
         HcmsContentEntry data = hcmsContentEntryRepository.findOneByBizId(entryEntityId.getValue());
 
         EntryEntity entity = new EntryEntity();
-        entity.setEntryEntityId(entryEntityId);
-        entity.setTypeEntityId(new TypeEntityId(data.getContentTypeId()));
+        entity.setEntryId(entryEntityId);
+        entity.setTypeId(new TypeId(data.getContentTypeId()));
 
         entity.setId(data.getId());
         entity.setVersion(data.getVersion());
@@ -44,8 +44,8 @@ public class EntryEntityRepositoryImpl implements EntryEntityRepository {
         data.setModifiedTime(entity.getModifiedTime());
         data.setDeleted(entity.getDeleted());
 
-        data.setContentTypeId(entity.getTypeEntityId().getValue());
-        data.setContentEntryId(entity.getEntryEntityId().getValue());
+        data.setContentTypeId(entity.getTypeId().getValue());
+        data.setContentEntryId(entity.getEntryId().getValue());
         data.setStatus(entity.getStatus());
 
         hcmsContentEntryRepository.save(data);

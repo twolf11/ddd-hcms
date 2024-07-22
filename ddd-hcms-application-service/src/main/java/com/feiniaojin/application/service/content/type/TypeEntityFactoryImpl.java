@@ -2,7 +2,7 @@ package com.feiniaojin.application.service.content.type;
 
 import com.feiniaojin.ddd.hcms.domain.content.TypeEntity;
 import com.feiniaojin.ddd.hcms.domain.content.TypeEntityFactory;
-import com.feiniaojin.ddd.hcms.domain.content.TypeEntityId;
+import com.feiniaojin.ddd.hcms.domain.content.TypeId;
 import com.feiniaojin.ddd.hcms.domain.content.TypeStatus;
 import org.springframework.stereotype.Service;
 
@@ -19,9 +19,9 @@ public class TypeEntityFactoryImpl implements TypeEntityFactory {
 
         TypeEntity typeEntity = new TypeEntity();
         String idStr = UUID.randomUUID().toString();
-        TypeEntityId typeEntityId = new TypeEntityId(idStr);
+        TypeId typeEntityId = new TypeId(idStr);
 
-        typeEntity.setTypeEntityId(typeEntityId);
+        typeEntity.setTypeId(typeEntityId);
         typeEntity.setDisplayName(displayName);
         typeEntity.setStatus(TypeStatus.INIT.getCode());
 

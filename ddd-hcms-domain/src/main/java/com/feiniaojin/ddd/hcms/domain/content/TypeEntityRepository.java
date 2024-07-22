@@ -7,6 +7,6 @@ import com.feiniaojin.ddd.DomainRepository;
  *
  * @author qinyujie
  */
-public interface TypeEntityRepository extends DomainRepository<TypeEntity, TypeEntityId> {
+public interface TypeEntityRepository extends DomainRepository<TypeEntity, TypeId> {
 
 }

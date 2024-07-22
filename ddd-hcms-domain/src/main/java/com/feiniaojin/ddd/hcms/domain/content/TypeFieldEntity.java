@@ -11,12 +11,12 @@ import lombok.Data;
 @Data
 public class TypeFieldEntity extends AbstractDomainMask {
 
-    private TypeFieldEntityId typeFieldEntityId;
+    private TypeFieldId typeFieldId;
 
     /**
      * 对于内容类型的ID
      */
-    private TypeEntityId typeEntityId;
+    private TypeId typeId;
 
     private String fieldName;
 

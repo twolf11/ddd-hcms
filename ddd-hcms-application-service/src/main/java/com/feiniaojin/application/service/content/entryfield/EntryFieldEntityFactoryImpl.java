@@ -9,21 +9,21 @@ import java.util.UUID;
 public class EntryFieldEntityFactoryImpl implements EntryFieldEntityFactory {
 
     @Override
-    public EntryFieldEntity newInstance(EntryEntityId entryEntityId,
-                                        TypeFieldEntityId typeFieldEntityId,
+    public EntryFieldEntity newInstance(EntryId entryEntityId,
+                                        TypeFieldId typeFieldEntityId,
                                         String fieldName,
                                         Integer fieldDataType,
                                         String fieldValue) {
         EntryFieldEntity entryFieldEntity = new EntryFieldEntity();
 
-        entryFieldEntity.setEntryEntityId(entryEntityId);
-        entryFieldEntity.setTypeFieldEntityId(typeFieldEntityId);
+        entryFieldEntity.setEntryId(entryEntityId);
+        entryFieldEntity.setTypeFieldId(typeFieldEntityId);
         entryFieldEntity.setFieldName(fieldName);
         entryFieldEntity.setFieldValue(fieldValue);
         entryFieldEntity.setFieldDataType(fieldDataType);
 
         String uuid = UUID.randomUUID().toString();
-        entryFieldEntity.setEntryFieldEntityId(new EntryFieldEntityId(uuid));
+        entryFieldEntity.setEntryFieldId(new EntryFieldId(uuid));
 
         entryFieldEntity.setDeleted(0);
         return entryFieldEntity;

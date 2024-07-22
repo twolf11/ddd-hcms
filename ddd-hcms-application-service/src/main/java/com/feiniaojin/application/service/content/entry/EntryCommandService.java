@@ -4,7 +4,7 @@ import com.feiniaojin.application.service.content.entry.dto.EntryCreateCommand;
 import com.feiniaojin.ddd.hcms.domain.content.EntryEntity;
 import com.feiniaojin.ddd.hcms.domain.content.EntryEntityFactory;
 import com.feiniaojin.ddd.hcms.domain.content.EntryEntityRepository;
-import com.feiniaojin.ddd.hcms.domain.content.TypeEntityId;
+import com.feiniaojin.ddd.hcms.domain.content.TypeId;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +19,7 @@ public class EntryCommandService {
 
     public void createEntry(EntryCreateCommand command) {
 
-        TypeEntityId typeEntityId = new TypeEntityId(command.getTypeEntityId());
+        TypeId typeEntityId = new TypeId(command.getTypeEntityId());
 
         EntryEntity entryEntity = factory.newInstance(typeEntityId);
 

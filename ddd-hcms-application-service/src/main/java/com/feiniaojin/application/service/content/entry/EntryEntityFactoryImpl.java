@@ -2,8 +2,8 @@ package com.feiniaojin.application.service.content.entry;
 
 import com.feiniaojin.ddd.hcms.domain.content.EntryEntity;
 import com.feiniaojin.ddd.hcms.domain.content.EntryEntityFactory;
-import com.feiniaojin.ddd.hcms.domain.content.EntryEntityId;
-import com.feiniaojin.ddd.hcms.domain.content.TypeEntityId;
+import com.feiniaojin.ddd.hcms.domain.content.EntryId;
+import com.feiniaojin.ddd.hcms.domain.content.TypeId;
 import org.springframework.stereotype.Component;
 
 import java.util.UUID;
@@ -12,15 +12,15 @@ import java.util.UUID;
 public class EntryEntityFactoryImpl implements EntryEntityFactory {
 
     @Override
-    public EntryEntity newInstance(TypeEntityId typeEntityId) {
+    public EntryEntity newInstance(TypeId typeId) {
 
         EntryEntity entryEntity = new EntryEntity();
 
-        entryEntity.setTypeEntityId(typeEntityId);
+        entryEntity.setTypeId(typeId);
 
         String string = UUID.randomUUID().toString();
-        EntryEntityId entryEntityId = new EntryEntityId(string);
-        entryEntity.setEntryEntityId(entryEntityId);
+        EntryId entryEntityId = new EntryId(string);
+        entryEntity.setEntryId(entryEntityId);
 
         entryEntity.setStatus(0);
 

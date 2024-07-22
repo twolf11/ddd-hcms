@@ -12,17 +12,17 @@ public class EntryFieldEntity extends AbstractDomainMask {
     /**
      * 实例属性唯一标识
      */
-    private EntryFieldEntityId entryFieldEntityId;
+    private EntryFieldId entryFieldId;
 
     /**
      * 属性定义标识
      */
-    private TypeFieldEntityId typeFieldEntityId;
+    private TypeFieldId typeFieldId;
 
     /**
      * 实例的id
      */
-    private EntryEntityId entryEntityId;
+    private EntryId entryId;
 
     private String fieldName;
 

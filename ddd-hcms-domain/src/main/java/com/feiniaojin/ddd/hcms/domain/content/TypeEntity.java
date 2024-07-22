@@ -11,7 +11,7 @@ import lombok.Data;
 @Data
 public class TypeEntity extends AbstractDomainMask {
 
-    private TypeEntityId typeEntityId;
+    private TypeId typeId;
 
     private String displayName;
 

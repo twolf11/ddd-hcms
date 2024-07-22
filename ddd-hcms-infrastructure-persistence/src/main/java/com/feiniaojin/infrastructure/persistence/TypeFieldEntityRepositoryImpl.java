@@ -1,9 +1,9 @@
 package com.feiniaojin.infrastructure.persistence;
 
-import com.feiniaojin.ddd.hcms.domain.content.TypeEntityId;
 import com.feiniaojin.ddd.hcms.domain.content.TypeFieldEntity;
-import com.feiniaojin.ddd.hcms.domain.content.TypeFieldEntityId;
 import com.feiniaojin.ddd.hcms.domain.content.TypeFieldEntityRepository;
+import com.feiniaojin.ddd.hcms.domain.content.TypeFieldId;
+import com.feiniaojin.ddd.hcms.domain.content.TypeId;
 import com.feiniaojin.infrastructure.persistence.data.HcmsContentTypeField;
 import com.feiniaojin.infrastructure.persistence.jdbc.HcmsContentTypeFieldRepository;
 import jakarta.annotation.Resource;
@@ -16,7 +16,7 @@ public class TypeFieldEntityRepositoryImpl implements TypeFieldEntityRepository 
     private HcmsContentTypeFieldRepository hcmsContentTypeFieldRepository;
 
     @Override
-    public TypeFieldEntity load(TypeFieldEntityId entityId) {
+    public TypeFieldEntity load(TypeFieldId entityId) {
 
         HcmsContentTypeField data = hcmsContentTypeFieldRepository.findOneByBizId(entityId.getValue());
 
@@ -24,9 +24,9 @@ public class TypeFieldEntityRepositoryImpl implements TypeFieldEntityRepository 
 
         entity.setStatus(data.getStatus());
         entity.setFieldName(data.getFieldName());
-        entity.setTypeFieldEntityId(entityId);
+        entity.setTypeFieldId(entityId);
         entity.setFieldDataType(data.getFieldDataType());
-        entity.setTypeEntityId(new TypeEntityId(data.getContentTypeId()));
+        entity.setTypeId(new TypeId(data.getContentTypeId()));
 
         //version id
         entity.setId(data.getId());
@@ -51,8 +51,8 @@ public class TypeFieldEntityRepositoryImpl implements TypeFieldEntityRepository 
         data.setFieldName(entity.getFieldName());
         data.setFieldDataType(entity.getFieldDataType());
         data.setStatus(entity.getStatus());
-        data.setFieldId(entity.getTypeFieldEntityId().getValue());
-        data.setContentTypeId(entity.getTypeEntityId().getValue());
+        data.setFieldId(entity.getTypeFieldId().getValue());
+        data.setContentTypeId(entity.getTypeId().getValue());
 
         hcmsContentTypeFieldRepository.save(data);
     }

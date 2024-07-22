@@ -13,14 +13,14 @@ public class EntryFieldEntityRepositoryImpl implements EntryFieldEntityRepositor
     private ContentEntryFieldRepository contentEntryFieldRepository;
 
     @Override
-    public EntryFieldEntity load(EntryFieldEntityId entityId) {
+    public EntryFieldEntity load(EntryFieldId entityId) {
 
         ContentEntryField data = contentEntryFieldRepository.findOneByBizId(entityId.getValue());
 
         EntryFieldEntity entity = new EntryFieldEntity();
-        entity.setEntryFieldEntityId(entityId);
-        entity.setEntryEntityId(new EntryEntityId(data.getEntryId()));
-        entity.setTypeFieldEntityId(new TypeFieldEntityId(data.getTypeFieldId()));
+        entity.setEntryFieldId(entityId);
+        entity.setEntryId(new EntryId(data.getEntryId()));
+        entity.setTypeFieldId(new TypeFieldId(data.getTypeFieldId()));
 
         entity.setFieldName(data.getFieldName());
         entity.setFieldValue(data.getFieldValue());
@@ -48,9 +48,9 @@ public class EntryFieldEntityRepositoryImpl implements EntryFieldEntityRepositor
         data.setDeleted(entity.getDeleted());
 
 
-        data.setEntryId(entity.getEntryEntityId().getValue());
-        data.setEntryFieldId(entity.getEntryFieldEntityId().getValue());
-        data.setTypeFieldId(entity.getTypeFieldEntityId().getValue());
+        data.setEntryId(entity.getEntryId().getValue());
+        data.setEntryFieldId(entity.getEntryFieldId().getValue());
+        data.setTypeFieldId(entity.getTypeFieldId().getValue());
         data.setFieldName(entity.getFieldName());
         data.setFieldValue(entity.getFieldValue());
         data.setFieldDataType(entity.getFieldDataType());

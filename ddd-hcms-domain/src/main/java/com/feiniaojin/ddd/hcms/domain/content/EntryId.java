@@ -6,11 +6,11 @@ import org.apache.commons.lang3.StringUtils;
 /**
  * @author qinyujie
  */
-public class EntryEntityId implements EntityId<String> {
+public class EntryId implements EntityId<String> {
 
     private String value;
 
-    public EntryEntityId(String value) {
+    public EntryId(String value) {
         if (StringUtils.isBlank(value)) {
             throw new IllegalArgumentException("ContentEntryId入参不能为空");
         }
